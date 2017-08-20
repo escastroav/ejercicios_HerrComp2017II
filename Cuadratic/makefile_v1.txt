@@ -1,0 +1,19 @@
+﻿CXX = g++
+CXXFLAGS = -I. 
+LDFLAGS = 
+SOURCES = mainCuad.cpp cuadratic.cpp # All source codes.
+OBJ = $(SOURCES:.cpp=.o) # Get all code names with .o extension.
+DEPS = cuadratic.h # Dependencies and libs.
+
+all : main.x $(SOURCES) $(DEPS) # target by default
+
+main.x : $(OBJ)
+	@echo "Creating main executable ..."
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+.cpp.o:
+	$(CXX) -c -o $@ $^ $(CXXFLAGS)
+
+.PHONY: clean
+clean: 
+	rm -f *.o *~ 
