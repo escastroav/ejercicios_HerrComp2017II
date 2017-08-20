@@ -12,3 +12,5 @@ Pendientes:
    
 2) Errores en multiplicación
 (últimas 3 diapositivas en presentación Errors on Computation)  
+
+3) Ejercicios de makefile.
