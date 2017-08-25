@@ -9,5 +9,5 @@ extern bool areComplex;
 
 void SolvePoopCuad(double a, double b, double c);
 void SolveGoodCuad(double a, double b, double c);
-
+double ConfirmSol(double a, double b, double c, double x);
 

@@ -17,10 +17,10 @@ void SolvePoopCuad(double a, double b, double c)
       x_1 = (-b + sqrt(disc))/(2*a);
       x_2 = (-b - sqrt(disc))/(2*a);
     }
-  else
+  /*else
     {
       std::cout << "Complex solutions!.. from now we don't care." << std::endl;
-    }
+      }*/
 }
 
 void SolveGoodCuad(double a, double b, double c)
@@ -36,8 +36,13 @@ void SolveGoodCuad(double a, double b, double c)
       x_1 = -(2*c)/(b + std::sqrt(disc));
       x_2 = -(2*c)/(b - std::sqrt(disc));
     }
-  else
+  /*else
     {
       std::cout << "Complex solutions!.. from now we don't care." << std::endl;
-    }
+      }*/
+}
+
+double ConfirmSol(double a, double b, double c, double x)
+{
+  return (a*std::pow(x,2.) + b*x + c);
 }
