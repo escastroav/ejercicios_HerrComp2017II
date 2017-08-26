@@ -19,12 +19,16 @@ int main(int argc, char **argv)
   for(int n = 1; n <= 100; n++)
     {
       c = pow(10.,-n);
+      
       SolvePoopCuad(a, b, c);
       xs1 = x_1; xs2 = x_2;
+      
       s1 = ConfirmSol(a, b, c, xs1);
       s2 = ConfirmSol(a, b, c, xs2);
+      
       SolveGoodCuad(a, b, c);
       xp1 = x_1; xp2 = x_2;
+      
       p1 = ConfirmSol(a, b, c, xp1);
       p2 = ConfirmSol(a, b, c, xp2);
 
