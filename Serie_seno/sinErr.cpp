@@ -37,27 +37,35 @@ double GoodSin (double x, int N)
   return sum;
 }
 
-double CompareChart(double x, double tole)
+int CompareChart(double x, double tole)
 {
   int n = 0;
   double sumSin = 0., sinError = 0.;
+  
   do
     {
       sumSin = GoodSin(x, n);
       sinError = std::fabs(sumSin-std::sin(x))/std::fabs(std::sin(x));
-      std::cout << x << "\t" << n << "\t" << sumSin << "\t" << sinError << std::endl;
+      // std::cout << x << "\t" << n << "\t" << sumSin << "\t" << sinError << std::endl;
       n++;
     }while(sinError > tole);
+  
+  return n;
 }
 
 int main(int argc, char **argv)
 {
+  int Nmax;
   double fix_x = (double)std::atof(argv[1]), tolerance = (double)std::atof(argv[2]);
 
   std::cout.precision(10); std::cout.setf(std::ios::scientific);
   
-  std::cout << "x" << "\t" <<  "term" << "\t" << "good" << "\t" << "error" << std::endl;
-  CompareChart(fix_x, tolerance);
+  //std::cout << "x" << "\t" <<  "term" << "\t" << "good" << "\t" << "error" << std::endl;
+  for(double x = 0; x<= fix_x; x+=0.1)
+    {
+      Nmax = CompareChart(x, tolerance);
+      std::cout << x << "\t" << Nmax << std::endl;
+    }
   
   return 0;
 }
